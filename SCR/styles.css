@@ -32,15 +32,17 @@ body {
 #addPurchaseSection,
 #removePurchaseSection {
     background-color: #555;
+    padding: 20px;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
+    color: #fff;
 }
 
 input {
-    width: 100%;
+    width: calc(100% - 16px);
     padding: 8px;
     margin-bottom: 15px;
     box-sizing: border-box;
@@ -73,6 +75,7 @@ button:hover {
 
 #purchaseList p {
     margin: 0;
+    color: #fff;
 }
 
 #removePurchaseSection button {
