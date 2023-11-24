@@ -62,9 +62,72 @@ async function adicionarCompra() {
     }
 }
 
+
 function limparCamposCompra() {
     document.getElementById('nomeCompra').value = '';
     document.getElementById('dataCompra').value = '';
     document.getElementById('valorCompra').value = '';
     document.getElementById('parcelasPagas').value = '';
-    document.getElementById('parcelasRestantes
+    document.getElementById('parcelasRestantes').value = '';
+}
+
+async function removerCompra() {
+    const idCompra = document.getElementById('idCompra').value;
+
+    try {
+
+        const resposta = await fetch('http://localhost:3000/removerCompra', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                idCompra,
+            }),
+        });
+
+
+        const dados = await resposta.json();
+        console.log(dados.message);
+
+    } catch (erro) {
+        console.error('Erro ao remover compra:', erro.message);
+    }
+}
+
+async function atualizarCompra() {
+    const idCompra = document.getElementById('idCompra').value;
+    const parcelasPagas = document.getElementById('parcelasPagas').value;
+    const parcelasRestantes = document.getElementById('parcelasRestantes').value;
+
+    try {
+
+        const resposta = await fetch('http://localhost:3000/atualizarCompra', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                idCompra,
+                parcelasPagas,
+                parcelasRestantes,
+            }),
+        });
+
+
+        const dados = await resposta.json();
+        console.log(dados.message);
+
+
+        const compraAtualizada = dados.compraAtualizada;
+        atualizarListaDeComprasNaInterface(compraAtualizada);
+    } catch (erro) {
+        console.error('Erro ao atualizar compra:', erro.message);
+    }
+}
+
+
+function atualizarListaDeComprasNaInterface(compraAtualizada) {
+
+    console.log('Atualizando dinamicamente a lista de compras na interface:', compraAtualizada);
+}
