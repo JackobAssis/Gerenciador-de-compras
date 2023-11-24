@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-Br">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -11,28 +11,38 @@
 <body>
     <div id="app">
 
-        <div id="addCardSection">
-            <label for="cardName">Nome do Cartão:</label>
-            <input type="text" id="cardName" placeholder="Digite o nome do cartão">
-            <label for="dueDate">Data de Pagamento:</label>
-            <input type="date" id="dueDate">
-            <label for="creditLimit">Limite do Cartão:</label>
-            <input type="number" id="creditLimit" placeholder="Digite o limite do cartão">
-            <button onclick="addCard()">Adicionar Cartão</button>
+        <div id="addCardSection" class="section">
+            <label for="nomeCartao">Nome do Cartão:</label>
+            <input type="text" id="nomeCartao" placeholder="Digite o nome do cartão">
+            <label for="dataVencimento">Data de Pagamento:</label>
+            <input type="date" id="dataVencimento">
+            <label for="limiteCredito">Limite do Cartão:</label>
+            <input type="number" id="limiteCredito" placeholder="Digite o limite do cartão">
+            <label for="parcelasPagas">Parcelas Pagas:</label>
+            <input type="number" id="parcelasPagas" placeholder="Quantidade de parcelas pagas">
+            <label for="parcelasRestantes">Parcelas Restantes:</label>
+            <input type="number" id="parcelasRestantes" placeholder="Quantidade de parcelas restantes">
+            <button onclick="adicionarCartao()">Adicionar Cartão</button>
         </div>
 
-        <div id="addPurchaseSection">
-
-            <button onclick="addPurchase()">Adicionar Compra</button>
+        <div id="addPurchaseSection" class="section">
+            <label for="nomeCompra">Nome da Compra:</label>
+            <input type="text" id="nomeCompra" placeholder="Digite o nome da compra">
+            <label for="dataCompra">Data da Compra:</label>
+            <input type="date" id="dataCompra">
+            <label for="valorCompra">Valor da Compra:</label>
+            <input type="number" id="valorCompra" placeholder="Digite o valor da compra">
+            <button onclick="adicionarCompra()">Adicionar Compra</button>
         </div>
 
         <div id="purchaseList">
 
         </div>
 
-        <div id="removePurchaseSection">
-
-            <button onclick="removePurchase()">Remover Compra</button>
+        <div id="removePurchaseSection" class="section">
+            <label for="idCompra">ID da Compra:</label>
+            <input type="text" id="idCompra" placeholder="Digite o ID da compra a ser removida">
+            <button onclick="removerCompra()">Remover Compra</button>
         </div>
     </div>
 
